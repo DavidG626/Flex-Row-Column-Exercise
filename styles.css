@@ -1,0 +1,163 @@
+* {
+  background-color: black;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header {
+  min-height: 25vh;
+  width: 100%;
+  background: black;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.text-box {
+  width: 90%;
+  color: white;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.text-box h1 {
+  font-size: 25px;
+}
+
+nav {
+  display: flex;
+  padding: 2% 6%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.nav-links {
+  flex: 1;
+  text-align: right;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding: 8px 12px;
+  position: relative;
+}
+
+.nav-links ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+.nav-links ul li:hover::after {
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #f44336;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+
+.nav-links ul li:hover::after {
+  width: 100%;
+}
+/* fix this. menu disappears. could be problem with z index */
+@media (max-width: 600px) {
+  .text-box h1 {
+    font-size: 15px;
+  }
+
+  .nav-links ul {
+    position: absolute;
+    top: 100%; /* Position dropdown below nav */
+    right: 0;
+    background-color: black; /* Adjust background color as needed */
+    z-index: 4; /* Ensure dropdown is above other content */
+    display: none; /* Hide dropdown by default */
+  }
+  
+
+  .nav-links ul li {
+    display: block;
+    text-align: right;
+    color: white;
+  }
+
+  .nav-links:hover ul {
+    display: block; /* Show dropdown on hover */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+  flex-wrap: wrap;
+}
+/* Flexbox examples */
+.test-1 {
+  border-radius: 10px;
+  display: inline-flex; /* Use inline-flex to adjust width */
+  flex-direction: row;  /* adjust row/column*/
+  border: 2px solid green;
+  padding: 10px;
+  margin: 20px;
+  justify-content: space-around;
+  background-color: #f0f0f0;
+  width: 500px;
+
+}
+
+.test-2 {
+  border-radius: 10px;
+  display: inline-flex; /* Use inline-flex to adjust width */
+  flex-direction: row; /* adjust row/column*/
+  border: 2px solid blue;
+  padding: 10px;
+  margin: 20px;
+  background-color: #f0f0f0;
+  width: 500px;
+  
+}
+
+/* The <div> elements are adjusting in size according 
+to the text inside them because they are set to display: 
+flex; which makes them flex items. By default, flex items
+have the property flex-shrink: 1;, which allows them to shrink 
+if necessary to prevent overflow, but they also respect the 
+content size. */
+
+.test-1 div, .test-2 div {
+  background-color: #4CAF50;
+  color: white;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  border-radius: 5px;
+  width: 100px;  /* Set a fixed width */
+  height: 100px; /* Set a fixed height */
+  flex-shrink: 0; /* Prevent shrinking */
+}
